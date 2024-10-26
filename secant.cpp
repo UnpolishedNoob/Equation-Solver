@@ -1,14 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define int double
 
-int a, b, c, d, e;
-int f(int x){
+
+double a, b, c, d, e;
+double f(double x){
     return a*x*x*x*x+b*x*x*x+c*x*x+d* x+ e;
 }
 
-void secant(double x1, double x2) {
-    int it = 0;
+void secantsolver(double x1, double x2) {
+    double it = 0;
     double ox = INT_MAX;
     while (true) {
         it++;
@@ -25,8 +25,8 @@ void secant(double x1, double x2) {
     }
 }
 
-int32_t main() {
-      int key;
+int secant(){
+      double key;
     cout<<"Choose format: "<<endl;
     cout<<"1.ax^2+bx+c."<<endl;
     cout<<"2.ax^3+bx^2+cx+d."<<endl;
@@ -59,21 +59,21 @@ int32_t main() {
         cout<<"invalid key"<<endl;
         return 0;
     }
-    int n =floor(sqrt(abs(a+b+c+d+e)))+10;
+    double n =floor(sqrt(abs(a+b+c+d+e)))+10;
 
-    vector<pair<double, double>> intervals;
+    vector<pair<double, double>> doubleervals;
     for (double i=-n;i< n;i+=0.1) {
         if(f(i)*f(i+0.1)<0) {
-            intervals.push_back({i,i+0.1});
+            doubleervals.push_back({i,i+0.1});
         }
     }
 
-    if (intervals.empty()) {
+    if (doubleervals.empty()) {
         cout << "No roots found in the given range.\n";
     } else {
-        for (auto interval : intervals) {
-            cout << "Searching root in interval [" << interval.first << ", " << interval.second << "]\n";
-            secant(interval.first, interval.second);
+        for (auto doubleerval : doubleervals) {
+            cout << "Searching root in doubleerval [" << doubleerval.first << ", " << doubleerval.second << "]\n";
+            secantsolver(doubleerval.first, doubleerval.second);
         }
     }
 
