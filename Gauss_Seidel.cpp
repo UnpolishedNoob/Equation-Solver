@@ -5,9 +5,11 @@ using namespace std;
 #define max_iteration 1000
 void gauss_seidel()
 {
+    
     int n;
     cout << "Equation number (can be any) : ";
     cin >> n;
+    cout<<endl<<"Input format : ax +by + cz... ... = z"<<endl;
     vector<vector<double>> eqn;
     for (int i = 0; i < n; i++)
     {
@@ -48,14 +50,10 @@ void gauss_seidel()
             return;
         }
     } while (e);
+    cout<<"SOLUTIONS : "<<endl;
     for (int i = 0; i < n; i++)
     {
         cout << x[i] << " ";
     }
     cout << endl;
-}
-
-int main()
-{
-    gauss_seidel();
 }

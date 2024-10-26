@@ -62,7 +62,7 @@ void inverse_matrix()
         }
     }
 
-
+    cout<<"SOLUTION : "<<endl;
     for(int i=0;i<n;i++){
         for(int j=n;j<n+n;j++){
             cout<<eqn[i][j]<<" ";
@@ -71,7 +71,3 @@ void inverse_matrix()
     }
 }
 
-int main()
-{
-    inverse_matrix();
-}
