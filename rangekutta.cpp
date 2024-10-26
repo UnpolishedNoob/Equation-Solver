@@ -1,19 +1,25 @@
 #include <bits/stdc++.h>
 using namespace std;
-
-double eq(double a,double b){
-    return 7*a-8*b;
+double a,b,c,d,e,key;
+double eq(double x,double y){
+    if(key==1)
+    return a*x+b*y;
+    else if(key==2)
+        return a*sin(x);
+    else if(key==3)
+        return a*cos(x);
+    else if(key==4)
+        return a*cos(x)+b*sin(y);
+    else if(key==5)
+        return a*sin(x)+b*cos(y);
 }
 
-double exact(double a){
-    return 57.0/64.0*exp(-8.0*a)+(7.0/8.0)*a+(7.0/64.0);
-}
 
 void rk(double x0,double y0,int steps,double h){
-    vector<double>xv,yv,ev;
+    vector<double>xv,yv;
     double x=x0,y=y0;
-    cout<<left<<setw(10)<<"Iteration"<<setw(15)<<"X Value"<<setw(15)<<"RK4 Y Value"<<setw(15)<<"Exact Y Value"<<setw(15)<<"Absolute Error"<<endl;
-    cout<<string(70,'-')<<endl;
+    cout<<left<<setw(10)<<"Iteration"<<setw(15)<<"X Value"<<setw(15)<<"RK4 Y Value"<<endl;
+    cout<<string(50,'-')<<endl;
 
     for(int i=0;i<steps;i++){
         double k1=h*eq(x,y);
@@ -24,25 +30,49 @@ void rk(double x0,double y0,int steps,double h){
         x+=h;
         xv.push_back(x);
         yv.push_back(y);
-        double exact_y=exact(x);
-        double error=fabs(y-exact_y);
-        ev.push_back(error);
-        cout<<left<<setw(10)<<(i+1)<<setw(15)<<fixed<<setprecision(4)<<x<<setw(15)<<fixed<<setprecision(4)<<y<<setw(15)<<fixed<<setprecision(4)<<exact_y<<setw(15)<<fixed<<setprecision(4)<<error<<endl;
+        cout<<left<<setw(10)<<(i+1)<<setw(15)<<fixed<<setprecision(4)<<x<<setw(15)<<fixed<<setprecision(4)<<y<<setw(15)<<setw(15)<<endl;
     }
 
-    ofstream file("results.txt");
-    file<<"Iteration,X Value,RK4 Y Value,Exact Y Value,Absolute Error\n";
-    for(size_t j=0;j<xv.size();j++)
-        file<<(j+1)<<", "<<xv[j]<<", "<<yv[j]<<", "<<exact(xv[j])<<", "<<ev[j]<<"\n";
-    file.close();
 }
 
-void rungekutta(){
-    cout<<"This method works the differential equation 8*x - 7*y"<<"\n";
-    double ix=0,iy=1;
-    int s=15;
-    double h=0.1;
-    rk(ix,iy,s,h);
-
+void rungekutta()
+{
+    cout<<"choose format: "<<endl;
+    cout<<"1.ax+by"<<endl;
+    cout<<"2.asinx"<<endl;
+    cout<<"3.acosx"<<endl;
+    cout<<"4.asinx+bcosy"<<endl;
+    cout<<"5.acosx+bsiny"<<endl;
+    cout<<"enter a key: ";
+    cin>>key;
+    if(key==1){
+            cout<<"This format is for ax+by : "<<endl;
+    cout<<"Enter the value of a,b : ";
+        cin>>a>>b;
+    }
+    else if(key==2){
+    cout<<"This format is for asinx : "<<endl;
+    cout<<"Enter the value of a : ";
+    cin>>a;
+    }
+    else if(key==3){
+      cout<<"This format is for acosx : "<<endl;
+      cout<<"Enter the value of a : ";
+        cin>>a;
+    }
+    else if(key==4){
+    cout<<"This format is for asinx+bcosx : "<<endl;
+    cout<<"Enter the value of a,b : ";
+        cin>>a>>b;
+    }
+    else if(key==5){
+    cout<<"This format is for acosx+bsinx : "<<endl;
+    cout<<"Enter the value of a,b : ";
+        cin>>a>>b;
+    }
+    else{
+        cout<<"invalid key"<<endl;
+        return;
+    }
+        rk(0,1,15,.1);
 }
-
