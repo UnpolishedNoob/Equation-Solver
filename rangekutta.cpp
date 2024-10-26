@@ -12,6 +12,8 @@ double eq(double x,double y){
         return a*cos(x)+b*sin(y);
     else if(key==5)
         return a*sin(x)+b*cos(y);
+
+        return 0;
 }
 
 

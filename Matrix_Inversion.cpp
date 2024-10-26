@@ -65,7 +65,7 @@ void inverse_matrix()
     cout<<"SOLUTION : "<<endl;
     for(int i=0;i<n;i++){
         for(int j=n;j<n+n;j++){
-            cout<<eqn[i][j]<<" ";
+            cout << setw(8) << fixed << setprecision(4) << eqn[i][j] << "\t";
         }
         cout<<endl;
     }
