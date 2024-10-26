@@ -37,11 +37,12 @@ void rk(double x0,double y0,int steps,double h){
     file.close();
 }
 
-int main(){
+void rungekutta(){
     cout<<"This method works the differential equation 8*x - 7*y"<<"\n";
     double ix=0,iy=1;
     int s=15;
     double h=0.1;
     rk(ix,iy,s,h);
-    return 0;
+
 }
+
