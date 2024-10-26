@@ -24,7 +24,8 @@ void bisection(int a, int b) {
     }
 }
 
-int32_t main() {
+void solve()
+{
     int key;
     cout<<"Choose format: "<<endl;
     cout<<"1.ax^2+bx+c."<<endl;
@@ -56,7 +57,7 @@ int32_t main() {
     else
     {
         cout<<"invalid key"<<endl;
-        return 0;
+        return;
     }
     int n = floor(sqrt(abs(a4+a3+a2+a1+a0))) + 10;
 
@@ -75,6 +76,6 @@ int32_t main() {
             bisection(interval.first, interval.second);
         }
     }
-
-    return 0;
 }
+
+
