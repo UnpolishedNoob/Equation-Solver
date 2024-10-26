@@ -2,7 +2,7 @@
 using namespace std;
 
 void lu_factorization_for_2(){
-    cout<<"Enter in format ax+bx=c"<<endl;
+    cout<<endl<<"Input format : ax +by + cz... ... = z"<<endl;
         double arr[3][4];
         for(int i=1;i<3;i++){
             for(int j=1;j<4;j++){
@@ -21,11 +21,12 @@ void lu_factorization_for_2(){
 
         double x2=y2/u22;
         double x1=(y1-u12*x2)/u11;
+        cout<<"SOLUTIONS : "<<endl;
         cout<<x1<<" "<<x2<<endl;
 }
 
 void lu_factorization_for_3(){
-    cout<<"Enter in format ax+bx+cx=d"<<endl;
+    cout<<endl<<"Input format : ax +by + cz... ... = z"<<endl;
         double arr[4][5];
         for(int i=1;i<4;i++){
             for(int j=1;j<5;j++){
@@ -52,12 +53,12 @@ void lu_factorization_for_3(){
     double x3 = y3 / u33;
     double x2 = (y2 - u23 * x3) / u22;
     double x1 = (y1 - u12 * x2 - u13 * x3) / u11;
-
+    cout<<"SOLUTIONS : "<<endl;
     cout<<x1<<" "<<x2<<" "<<x3<<endl;
 }
 
 void lu_factorization_for_4(){
-    cout<<"Enter in the format ax+bx+cx+dx=e"<<endl;
+    cout<<endl<<"Input format : ax +by + cz... ... = z"<<endl;
     double arr[5][6];
     for (int i = 1; i < 5; i++) {
         for (int j = 1; j < 6; j++) {
@@ -94,12 +95,12 @@ void lu_factorization_for_4(){
     double x3 = (y3 - u34 * x4) / u33;
     double x2 = (y2 - u23 * x3 - u24 * x4) / u22;
     double x1 = (y1 - u12 * x2 - u13 * x3 - u14 * x4) / u11;
-
+    cout<<"SOLUTIONS : "<<endl;
     cout<<x1<<" "<<x2<<" "<<x3<<" "<<x4<<endl;
 }
 
 void lu_factorization_for_5(){
-    cout<<"Enter in the format ax+bx+cx+dx+ex=f"<<endl;
+    cout<<endl<<"Input format : ax +by + cz... ... = z"<<endl;
 double arr[6][7];
     for (int i = 1; i < 6; i++) {
         for (int j = 1; j < 7; j++) {
@@ -147,11 +148,22 @@ double arr[6][7];
     double x3 = (y3 - u34 * x4 - u35 * x5) / u33;
     double x2 = (y2 - u23 * x3 - u24 * x4 - u25 * x5) / u22;
     double x1 = (y1 - u12 * x2 - u13 * x3 - u14 * x4 - u15 * x5) / u11;
-
+    cout<<"SOLUTIONS : "<<endl;
     cout<<x1<<" "<<x2<<" "<<x3<<" "<<x4<<" "<<x5<<endl;
 }
 
-int main(){
-     lu_factorization_for_5();
-    return 0;
+void lu_factorization(){
+    cout<<"Number of equations (2/3/4/5 ): ";
+    int n;
+    cin>>n;
+    if(n==5){
+        lu_factorization_for_5();
+    }else if(n==4){
+        lu_factorization_for_4();
+    }else if(n==3){
+        lu_factorization_for_3();
+    }else{
+        lu_factorization_for_2();
+    }
+
 }
