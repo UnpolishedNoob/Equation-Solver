@@ -1,15 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define int double
 
-int a4, a3, a2, a1, a0;
-int f(int x) {
+double a4, a3, a2, a1, a0;
+double f(double x) {
     return a4*pow(x, 4)+a3*pow(x, 3)+a2*x*x+a1*x+a0;
 }
 
-void falsePosition(int a, int b) {
-    int a0 = INT_MAX;
-    int o;
+void falsePositionsolver(double a, double b) {
+    double a0 = INT_MAX;
+    double o;
     while (true) {
         o =a0;
         a0 =(a*f(b)-b*f(a))/(f(b)-f(a));
@@ -24,9 +23,8 @@ void falsePosition(int a, int b) {
     }
 }
 
-
-int32_t main() {
-     int key;
+double false_position(){
+     double key;
     cout<<"Choose format: "<<endl;
     cout<<"1.ax^2+bx+c."<<endl;
     cout<<"2.ax^3+bx^2+cx+d."<<endl;
@@ -59,22 +57,23 @@ int32_t main() {
         cout<<"invalid key"<<endl;
         return 0;
     }
-    int n = floor(sqrt(abs(a4+a3+a2+a1+a0)))+10;
-    vector<pair<int, int>> intervals;
-    for (int i=-n; i<n;i+= 0.1) {
+    double n = floor(sqrt(abs(a4+a3+a2+a1+a0)))+10;
+    vector<pair<double, double>> doubleervals;
+    for (double i=-n; i<n;i+= 0.1) {
         if (f(i)*f(i + 0.1)<0) {
-            intervals.push_back({i,i+0.1});
+            doubleervals.push_back({i,i+0.1});
         }
     }
 
-    if (intervals.empty()) {
+    if (doubleervals.empty()) {
         cout << "No roots found in the given range.\n";
     } else {
-        for (auto interval : intervals) {
-            cout << "Searching root in interval ["<<interval.first << ", " <<interval.second<< "]\n";
-            falsePosition(interval.first, interval.second);
+        for (auto doubleerval : doubleervals) {
+            cout << "Searching root in doubleerval ["<<doubleerval.first << ", " <<doubleerval.second<< "]\n";
+            falsePositionsolver(doubleerval.first, doubleerval.second);
         }
     }
 
     return 0;
 }
+

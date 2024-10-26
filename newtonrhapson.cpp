@@ -1,9 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define int double
 
-int a, b, c, d, e;
-int f(double x) {
+
+double a, b, c, d, e;
+double f(double x) {
     return a*x*x*x*x+b*x*x*x+c*x*x+d*x+ e;
 }
 
@@ -11,8 +11,8 @@ double ff(double x) {
     return 4*a*x*x*x+3*b*x*x + 2*c*x+d;
 }
 
-void newtonRaphson(double x0, set<double>& r) {
-    int it = 0;
+void newtonRaphsonsolver(double x0, set<double>& r) {
+    double it = 0;
     while (true) {
         it++;
         double f1 =f(x0);
@@ -44,8 +44,8 @@ void newtonRaphson(double x0, set<double>& r) {
     }
 }
 
-int32_t main() {
-    int key;
+   int newton_raphson(){
+    double key;
     cout<<"Choose format: "<<endl;
     cout<<"1.ax^2+bx+c."<<endl;
     cout<<"2.ax^3+bx^2+cx+d."<<endl;
@@ -79,13 +79,13 @@ int32_t main() {
         return 0;
     }
 
-    int range = 100;
+    double range = 100;
     set<double> r;
     double step_size = 0.1;
     for (double i =-range;i<range;i+=step_size){
         if(f(i)*f(i+step_size)<0) {
-            cout << "Starting Newton-Raphson at interval [" <<i<<", "<<i+step_size<<"]\n";
-            newtonRaphson(i, r);
+            cout << "Starting Newton-Raphson at doubleerval [" <<i<<", "<<i+step_size<<"]\n";
+            newtonRaphsonsolver(i, r);
         }
     }
     if (r.empty()) {
