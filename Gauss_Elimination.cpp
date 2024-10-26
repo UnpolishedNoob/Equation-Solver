@@ -5,11 +5,12 @@ using namespace std;
 #define max_iteration 1000
 void gauss_elimination()
 {
-   
+
     int n;
     cout << "Equation number (can be any) : ";
     cin >> n;
-     cout<<endl<<"Input format : ax +by + cz... ... = z"<<endl;
+    cout << endl
+         << "Input format : ax +by + cz... ... = z" << endl;
     vector<vector<double>> eqn;
     for (int i = 0; i < n; i++)
     {
@@ -62,11 +63,12 @@ void gauss_elimination()
         }
         cout << endl;
     }
-    cout<<"SOLUTIONS : "<<endl;
+    cout << endl
+         << "SOLUTIONS : " << endl;
     for (int i = 0; i < n; i++)
     {
         cout << ans[i] << " ";
     }
-    cout << endl;
+    cout << endl
+         << endl;
 }
-

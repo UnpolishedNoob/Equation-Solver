@@ -8,7 +8,8 @@ void gauss_jordan_elimination()
     int n;
     cout << "Equation number (can be any) : ";
     cin >> n;
-     cout<<endl<<"Input format : ax +by + cz... ... = z"<<endl;
+    cout << endl
+         << "Input format : ax +by + cz... ... = z" << endl;
     vector<vector<double>> eqn;
     for (int i = 0; i < n; i++)
     {
@@ -53,13 +54,15 @@ void gauss_jordan_elimination()
     }
 
     double ans[n];
-    cout<<"SOLUTIONS : "<<endl;
+    cout << endl
+         << "SOLUTIONS : " << endl;
     for (int i = 0; i < n; i++)
     {
         ans[i] = eqn[i][n] / eqn[i][i];
         cout << ans[i] << " ";
     }
-    cout << endl;
+    cout << endl
+         << endl;
 
     // for(int i=0;i<n;i++){
     //     for(int j=0;j<=n;j++){
