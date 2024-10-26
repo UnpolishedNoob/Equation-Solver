@@ -9,6 +9,7 @@ void inverse_matrix()
     cout << "Dimension of square matrix (can be any) : ";
     cin >> n;
     vector<vector<double>> eqn;
+    cout<<endl<<"Give the elements:"<<endl;
     for (int i = 0; i < n; i++)
     {
         int c = n;

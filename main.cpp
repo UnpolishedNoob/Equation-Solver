@@ -14,7 +14,8 @@ using namespace std;
 
 int main()
 {
-    cout << "HELLO\nWELCOME TO Equation Solver !" << endl
+    cout << endl
+         << "HELLO\nWELCOME TO Equation Solver !" << endl
          << endl;
     while (1)
     {
