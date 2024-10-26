@@ -7,7 +7,7 @@ int f(int x) {
     return a4*pow(x,4)+a3*pow(x,3)+a2*x*x+a1*x+a0;
 }
 
-void bisection(int a, int b) {
+void bisectionsolver(int a, int b) {
     int a0 = INT_MAX;
     int o;
     while(true) {
@@ -24,7 +24,7 @@ void bisection(int a, int b) {
     }
 }
 
-void solve()
+void bisection()
 {
     int key;
     cout<<"Choose format: "<<endl;
@@ -73,7 +73,7 @@ void solve()
     } else {
         for (auto interval : intervals) {
             cout << "Searching root in interval [" << interval.first << ", " << interval.second << "]\n";
-            bisection(interval.first, interval.second);
+            bisectionsolver(interval.first, interval.second);
         }
     }
 }
