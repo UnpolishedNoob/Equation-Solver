@@ -24,3 +24,6 @@ The application also handles non-linear equations through:
 For matrix inversion, the application utilizes:
 
 - [Gauss-Jordan Elimination](https://en.wikipedia.org/wiki/Gaussian_elimination)
+
+<br><br><br>
+[Here](https://github.com/UnpolishedNoob/Equation-Solver/blob/main/equation_solver_console_application_demo%20.mp4) is a demo video how the application is working
