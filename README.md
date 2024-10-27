@@ -26,4 +26,6 @@ For matrix inversion, the application utilizes:
 - [Gauss-Jordan Elimination](https://en.wikipedia.org/wiki/Gaussian_elimination)
 
 <br><br><br>
-[Here](https://github.com/UnpolishedNoob/Equation-Solver/blob/main/equation_solver_console_application_demo%20.mp4) is a demo video how the application is working
+[Here](https://github.com/UnpolishedNoob/Equation-Solver/blob/main/equation_solver_console_application_demo%20.mp4) is a demo video how the application is working.
+<br><br><br>
+For contribution please see  [Contributing Guide](./CONTRIBUTING.md).
